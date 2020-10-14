@@ -14,12 +14,12 @@ var express 	      = require("express"),
 var	commentRoutes 	  = require("./routes/comments"),
 	campgroundRoutes  = require("./routes/campgrounds"),
 	indexRoutes       = require("./routes/index");
-
 var URL = process.env.DATABASEURL || 3000;
 //Passphrase=your password for accounts
-mongoose.connect(URL, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+// mongoose.connect(URL, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 // export DATABASEURL=mongodb://localhost/yelp-camp
-// mongoose.connect("mongodb+srv://sarthak:saru202001@cluster0-hvpay.mongodb.net/<dbname>?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect=("mongodb+srv://sanyam:L-Hh$*Xm9C!A9JT@sanyam.wyntg.mongodb.net/sanyam?retryWrites=true&w=majority"
+, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}))
