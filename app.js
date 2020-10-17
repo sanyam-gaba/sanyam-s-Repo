@@ -6,7 +6,7 @@ var express 	      = require("express"),
 	LocalStrategy     = require("passport-local"),
 	Campground        = require("./models/campground"),
 	Comment           = require("./models/comment"),
-	User              = require("./models/user"),
+	User              = require("./models/user"),	
 	flash             = require("connect-flash"),
 	methodOverride    = require("method-override"),
 	seedDB            = require("./seeds");
@@ -15,8 +15,9 @@ var	commentRoutes 	  = require("./routes/comments"),
 	campgroundRoutes  = require("./routes/campgrounds"),
 	indexRoutes       = require("./routes/index");
 
-console.log(process.env.DATABASEURL)
-mongoose.connect( process.env.DATABASEURL, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+var URL=process.env.DATABASEURL ||"mongodb://localhost/yelp-camp"
+
+mongoose.connect( URL, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 //sadw
 //Passphrase=your password for accounts
 // mongoose.connect(URL, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
